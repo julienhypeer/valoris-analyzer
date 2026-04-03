@@ -23,12 +23,9 @@
   box-shadow: 0 2px 8px rgba(34, 57, 71, 0.12);
 }
 
-.topbar-logo {
-  font-family: 'Montserrat', 'Inter', sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.15em;
-  color: white;
+.topbar-logo-img {
+  height: 22px;
+  filter: brightness(0) invert(1);
 }
 
 /* Header */
