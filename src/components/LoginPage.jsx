@@ -22,7 +22,7 @@ export default function LoginPage({ onLogin }) {
     <div className="login-page">
       <div className="login-wrapper">
         <div className="login-header">
-          <img src="/icon-192.png" alt="Valoris" className="login-logo" />
+          <img src="/logo/logo-large.png" alt="Valoris" className="login-logo-large" />
           <p className="login-label">Call Analyzer</p>
         </div>
 

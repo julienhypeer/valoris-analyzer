@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranscriptions } from './hooks/useTranscriptions';
 import LoginPage from './components/LoginPage';
+import TopBar from './components/TopBar';
 import Header from './components/Header';
 import UploadForm from './components/UploadForm';
 import TranscriptionList from './components/TranscriptionList';
@@ -46,6 +47,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <TopBar />
       <div className="container">
         <Header />
         <UploadForm onSubmit={handleSubmit} />
