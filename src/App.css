@@ -702,6 +702,7 @@
 
 .login-subtitle {
   font-size: 0.875rem;
+  font-weight: 400;
   color: rgba(34, 57, 71, 0.4);
   margin-bottom: 2rem;
 }
@@ -729,11 +730,11 @@
   padding: 0.75rem 1rem 0.75rem 2.5rem;
   border-radius: 12px;
   border: 2px solid transparent;
-  font-size: 0.875rem;
+  font-size: 16px;
   font-weight: 500;
   color: #223947;
   background: #F7F8FA;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
   outline: none;
 }
 
@@ -747,7 +748,8 @@
 }
 
 .login-input::placeholder {
-  color: rgba(34, 57, 71, 0.35);
+  color: inherit;
+  opacity: 0.4;
 }
 
 .login-error {
@@ -767,7 +769,7 @@
   font-size: 0.875rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: all 150ms ease;
 }
 
 .login-btn:hover:not(:disabled) {
