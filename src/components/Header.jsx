@@ -9,7 +9,7 @@ export default function Header() {
         </svg>
       </div>
       <div>
-        <h1 className="header-title">Valoris Analyzer</h1>
+        <h1 className="header-title">Call Analyzer</h1>
         <p className="header-subtitle">Transcription audio intelligente</p>
       </div>
       <div className="header-links">

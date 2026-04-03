@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Valoris Analyzer - Transcription Audio',
-        short_name: 'Valoris Analyzer',
+        name: 'Call Analyzer - Transcription Audio',
+        short_name: 'Call Analyzer',
         description: 'Convertissez vos fichiers audio et messages vocaux en texte',
         theme_color: '#223947',
         background_color: '#F5F0E8',
