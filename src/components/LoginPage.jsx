@@ -43,6 +43,8 @@ export default function LoginPage({ onLogin }) {
           {loading ? 'Connexion...' : 'Accéder'}
         </button>
       </form>
+
+      <p className="login-footer">Valoris — {new Date().getFullYear()}</p>
     </div>
   );
 }

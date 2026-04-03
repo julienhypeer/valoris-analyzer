@@ -802,6 +802,12 @@
   cursor: not-allowed;
 }
 
+.login-footer {
+  margin-top: 2rem;
+  font-size: 0.75rem;
+  color: rgba(34, 57, 71, 0.3);
+}
+
 /* Responsive */
 @media (max-width: 480px) {
   .container {
