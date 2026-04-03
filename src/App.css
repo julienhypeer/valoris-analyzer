@@ -693,11 +693,10 @@
   padding: 1.5rem;
 }
 
-.login-video {
+.login-logo {
   height: 64px;
   width: auto;
   margin-bottom: 1.5rem;
-  object-fit: contain;
 }
 
 .login-subtitle {

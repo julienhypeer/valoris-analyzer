@@ -19,16 +19,7 @@ export default function LoginPage({ onLogin }) {
 
   return (
     <div className="login-page">
-      <video
-        className="login-video"
-        autoPlay
-        loop
-        muted
-        playsInline
-      >
-        <source src="/video/logo-animation.webm" type="video/webm" />
-        <source src="/video/logo-animation.mp4" type="video/mp4" />
-      </video>
+      <img src="/logo/logo-large.png" alt="Valoris" className="login-logo" />
 
       <p className="login-subtitle">Accès réservé à l'équipe</p>
 
