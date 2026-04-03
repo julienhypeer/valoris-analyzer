@@ -23,6 +23,22 @@
   box-shadow: 0 2px 8px rgba(34, 57, 71, 0.12);
 }
 
+.topbar-logout {
+  position: absolute;
+  right: 1rem;
+  padding: 0.4rem;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 150ms ease;
+  display: flex;
+  align-items: center;
+}
+
+.topbar-logout:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .topbar-logo-img {
   height: 22px;
   filter: brightness(0) invert(1);

@@ -47,7 +47,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <TopBar />
+      <TopBar onLogout={() => { localStorage.removeItem(AUTH_KEY); setIsAuthenticated(false); }} />
       <div className="container">
         <Header />
         <UploadForm onSubmit={handleSubmit} />
