@@ -21,7 +21,7 @@ export default function LoginPage({ onLogin }) {
     <div className="login-page">
       <img src="/logo/logo-large.png" alt="Valoris" className="login-logo" />
 
-      <p className="login-subtitle">Accès réservé à l'équipe</p>
+      <p className="login-subtitle">Call Analyzer</p>
 
       <form onSubmit={handleSubmit} className="login-form">
         <div className="login-input-wrap">

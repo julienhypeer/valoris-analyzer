@@ -1,4 +1,4 @@
-# Valoris Analyzer (Call Analyzer)
+# Valoris - Call Analyzer
 
 Outil de transcription audio intelligente pour Valoris Conseil.
 
@@ -11,13 +11,15 @@ Outil de transcription audio intelligente pour Valoris Conseil.
 ## Couleurs (identiques à valoris-callers)
 - Navy (texte principal) : #223947
 - Gold (accent) : #C9973A
-- Cream (fond) : #F5F0E8
+- Cream (fond app) : #F5F0E8
 - Cream dark (bordures) : #EDE8DB
+- Gray light (inputs) : #F7F8FA
 
 ## Auth
-- Login page avec mot de passe (POST /api/login)
-- Mot de passe : Crosoft2 (configurable via env APP_PASSWORD)
+- Page de login (design copié de valoris-planning) : fond blanc, logo, input lock, bouton gold
+- POST /api/login — mot de passe : Crosoft2 (configurable via env APP_PASSWORD)
 - Session persistée en localStorage (clé: call-analyzer-auth)
+- Erreur auto-dismiss 2s
 
 ## Déploiement
 - VPS : 69.62.109.87
@@ -33,9 +35,17 @@ npm run dev      # Dev server
 
 ## Structure
 - `server.js` : Express proxy pour l'API Gladia (upload, transcription, résultats) + endpoint /api/login
-- `src/` : App React (composants, hooks, services)
-- `src/components/LoginPage.jsx` : Page de login (design copié de valoris-planning)
-- `src/components/TopBar.jsx` : Barre VALORIS logo en haut
-- `public/video/` : Dossier pour la vidéo logo-animation (login page)
-- `public/logo/` : Logo Valoris large
+- `src/App.jsx` : Conditionne login vs app principale
+- `src/components/LoginPage.jsx` : Page de login (fond blanc, logo, input cadenas, bouton gold)
+- `src/components/TopBar.jsx` : Barre navy avec logo Valoris image
+- `src/components/Header.jsx` : Titre Call Analyzer + liens Drive/Leads/Discours
+- `src/components/UploadForm.jsx` : Upload multi-fichiers audio
+- `src/components/TranscriptionList.jsx` : Liste des transcriptions
+- `src/components/TranscriptionCard.jsx` : Carte individuelle
+- `src/components/FicheModal.jsx` : Modal détail transcription
+- `src/hooks/useTranscriptions.js` : Hook gestion transcriptions (queue max 3 concurrent)
+- `src/services/gladia.js` : Intégration API Gladia
+- `src/services/storage.js` : Wrapper localStorage
+- `public/logo/logo-large.png` : Logo Valoris
+- `public/video/` : Dossier prévu pour vidéo logo-animation (à venir)
 - `dist/` : Build de production servi par Caddy

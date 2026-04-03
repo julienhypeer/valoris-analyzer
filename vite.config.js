@@ -9,9 +9,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['icon-192.png', 'icon-512.png'],
       manifest: {
-        name: 'Call Analyzer - Transcription Audio',
+        name: 'Valoris - Call Analyzer',
         short_name: 'Call Analyzer',
-        description: 'Convertissez vos fichiers audio et messages vocaux en texte',
+        description: 'Valoris - Call Analyzer',
         theme_color: '#223947',
         background_color: '#F5F0E8',
         display: 'standalone',
