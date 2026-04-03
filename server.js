@@ -13,6 +13,15 @@ const PORT = 3088;
 app.use(cors());
 app.use(express.json());
 
+const LOGIN_PASSWORD = process.env.APP_PASSWORD || 'Crosoft2';
+
+app.post('/api/login', (req, res) => {
+  const { password } = req.body;
+  if (!password) return res.status(400).json({ error: 'Mot de passe requis' });
+  if (password !== LOGIN_PASSWORD) return res.status(401).json({ error: 'Mot de passe incorrect' });
+  return res.json({ ok: true });
+});
+
 // Proxy: Upload audio
 app.post('/api/upload', upload.single('audio'), async (req, res) => {
   try {
