@@ -2,54 +2,56 @@ import { useState } from 'react';
 
 export default function LoginPage({ onLogin }) {
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setError('');
-    if (!password) {
-      setError('Veuillez entrer le mot de passe.');
-      return;
-    }
+    if (!password) return;
     setLoading(true);
     const err = await onLogin(password);
     setLoading(false);
-    if (err) setError(err);
+    if (err) {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
   }
 
   return (
     <div className="login-page">
-      <div className="login-wrapper">
-        <div className="login-header">
-          <img src="/logo/logo-large.png" alt="Valoris" className="login-logo-large" />
-          <p className="login-label">Call Analyzer</p>
+      <video
+        className="login-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src="/video/logo-animation.webm" type="video/webm" />
+        <source src="/video/logo-animation.mp4" type="video/mp4" />
+      </video>
+
+      <p className="login-subtitle">Accès réservé à l'équipe</p>
+
+      <form onSubmit={handleSubmit} className="login-form">
+        <div className="login-input-wrap">
+          <svg className="login-lock-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => { setPassword(e.target.value); setError(false); }}
+            placeholder="Mot de passe"
+            autoFocus
+            className={`login-input ${error ? 'login-input--error' : ''}`}
+          />
         </div>
-
-        <form onSubmit={handleSubmit} className="login-card">
-          <div className="login-field">
-            <label className="login-field-label">Mot de passe</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="login-input"
-              placeholder="Mot de passe"
-              autoFocus
-            />
-          </div>
-
-          {error && <p className="login-error">{error}</p>}
-
-          <button type="submit" disabled={loading} className="login-btn">
-            {loading ? 'Connexion...' : 'Se connecter'}
-          </button>
-        </form>
-
-        <p className="login-footer">
-          Valoris &copy; {new Date().getFullYear()}
-        </p>
-      </div>
+        {error && <p className="login-error">Mot de passe incorrect</p>}
+        <button type="submit" disabled={loading} className="login-btn">
+          {loading ? 'Connexion...' : 'Accéder'}
+        </button>
+      </form>
     </div>
   );
 }

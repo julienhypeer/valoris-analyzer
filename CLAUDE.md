@@ -1,4 +1,4 @@
-# Valoris Analyzer
+# Valoris Analyzer (Call Analyzer)
 
 Outil de transcription audio intelligente pour Valoris Conseil.
 
@@ -14,11 +14,16 @@ Outil de transcription audio intelligente pour Valoris Conseil.
 - Cream (fond) : #F5F0E8
 - Cream dark (bordures) : #EDE8DB
 
+## Auth
+- Login page avec mot de passe (POST /api/login)
+- Mot de passe : Crosoft2 (configurable via env APP_PASSWORD)
+- Session persistée en localStorage (clé: call-analyzer-auth)
+
 ## Déploiement
 - VPS : 69.62.109.87
 - Domaine : analyzer.valoris-conseil.fr
-- Nginx reverse proxy → port 3088 (API) + fichiers statiques dist/
-- PM2 process : valoris-analyzer
+- Caddy reverse proxy → port 3088 (API) + fichiers statiques dist/
+- PM2 process : valoris-analyzer (startup configuré, persiste au reboot)
 
 ## Commandes
 ```bash
@@ -27,6 +32,10 @@ npm run dev      # Dev server
 ```
 
 ## Structure
-- `server.js` : Express proxy pour l'API Gladia (upload, transcription, résultats)
+- `server.js` : Express proxy pour l'API Gladia (upload, transcription, résultats) + endpoint /api/login
 - `src/` : App React (composants, hooks, services)
-- `dist/` : Build de production servi par nginx
+- `src/components/LoginPage.jsx` : Page de login (design copié de valoris-planning)
+- `src/components/TopBar.jsx` : Barre VALORIS logo en haut
+- `public/video/` : Dossier pour la vidéo logo-animation (login page)
+- `public/logo/` : Logo Valoris large
+- `dist/` : Build de production servi par Caddy
