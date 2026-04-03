@@ -1,4 +1,0 @@
-[  126247ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api.gladia.io/v2/pre-recorded:0
-[  193355ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://api.gladia.io/v2/transcription:0
-[  200592ms] [ERROR] Access to fetch at 'https://api.gladia.io/v2/upload' from origin 'http://69.62.109.87:5173' has been blocked by CORS policy: Method OPTIONS is not allowed by Access-Control-Allow-Methods in preflight response. @ http://69.62.109.87:5173/:0
-[  200592ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://api.gladia.io/v2/upload:0
