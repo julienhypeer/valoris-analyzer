@@ -1,0 +1,31 @@
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - img [ref=e7]
+    - generic [ref=e10]:
+      - heading "Close Maker" [level=1] [ref=e11]
+      - paragraph [ref=e12]: Transcription audio intelligente
+  - generic [ref=e13]:
+    - generic [ref=e15] [cursor=pointer]:
+      - img [ref=e16]
+      - paragraph [ref=e34]: Glissez un fichier audio ici
+      - paragraph [ref=e35]: ou cliquez pour parcourir
+    - generic [ref=e21]:
+      - button "Call" [ref=e22] [cursor=pointer]
+      - button "Remontee" [ref=e23] [cursor=pointer]
+    - textbox "Nom de la transcription..." [ref=e24]
+    - button "Transcrire" [disabled] [ref=e25]
+  - generic [ref=e36]:
+    - heading "Transcriptions" [level=2] [ref=e37]
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - generic [ref=e41]: Call
+        - button "×" [ref=e42] [cursor=pointer]
+      - generic [ref=e43]: Call avec M. Rousillon
+      - generic [ref=e44]:
+        - generic [ref=e45]: Transcription...
+        - generic [ref=e47]: 01/04 08:50
+  - contentinfo [ref=e26]:
+    - paragraph [ref=e27]:
+      - text: Powered by
+      - link "Gladia" [ref=e28] [cursor=pointer]:
+        - /url: https://www.gladia.io
